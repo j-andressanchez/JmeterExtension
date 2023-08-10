@@ -1,0 +1,41 @@
+{
+  "manifestVersion": 1,
+  "id": "jmeter-extension",
+  "publisher": "j-andressanchez",
+  "name": "JMeter Extension",
+  "version": "1.0.1",
+  "description": "This extension enables integration with JMeter for performance testing in Azure DevOps",
+  "icons": {
+    "default": "images/icon.png"
+  },
+  "public": false,
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "scopes": [
+    "vso.build_execute",
+    "vso.release_execute"
+  ],
+  "categories": [
+    "Azure Pipelines"
+  ],
+  "files": [
+    {
+      "path": "releaseTask"
+    }
+   ],
+  "contributions": [
+    {
+      "id": "jmeter-task",
+      "type": "ms.vss-distributed-task.task",
+      "targets": [
+        "ms.vss-distributed-task.tasks"
+      ],
+      "properties": {
+        "name": "releaseTask"
+      }
+    }
+  ]
+}

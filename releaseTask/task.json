@@ -1,0 +1,45 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
+  "id": "4574d4ba-5cc7-4560-a38e-10daaeb54f88",
+  "name": "RunJMeterTest",
+  "friendlyName": "Run JMeter Test",
+  "description": "Runs a JMeter test script in Azure DevOps pipeline.",
+  "helpMarkDown": "Esta extención permite la ejecución de Test de performance con Jmeter desde Azure DevOps",
+  "category": "Azure Pipelines",
+  "author": "Jhon Andrés Sánchez",
+  "version": {
+    "Major": 1,
+    "Minor": 0,
+    "Patch": 1
+  },
+  "visibility": [
+    "Release"
+  ],
+  "demands": [
+    "node.js"
+  ],
+  "inputs": [
+    {
+      "name": "testScript",
+      "type": "filePath",
+      "label": "Test Script",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "Select the JMeter test script file."
+    },
+    {
+      "name": "dynamicDataFile",
+      "type": "filePath",
+      "label": "Dynamic Data File",
+      "defaultValue": "",
+      "required": false,
+      "helpMarkDown": "Select the dynamic data File (Just in Case)"
+    }
+  ],
+  "execution": {
+    "Node": {
+      "target": "index.js",
+      "nodeVersion": "18.x"
+    }
+  }
+}
